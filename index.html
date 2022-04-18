@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&family=Vollkorn&display=swap" rel="stylesheet">
+<style type="text/css">
+body {
+    background-color: #111;
+    background-attachment: fixed;
+    padding: 0;
+    margin-top: -1.5em;
+}
+
+#content {
+    backdrop-filter: hue-rotate(180deg);
+    background-color: RGBA(255,255,255,1);
+    width: 80%;
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    height: 100%;
+    padding: 2em;
+    box-shadow: 0 0 100px RGBA(255,255,255,0.2);
+}
+
+div.group {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #999;
+    background-color: RGBA(255,255,250,0.9);
+    padding: 0.4em;
+    display: grid;
+    border-radius: 0.8em;
+    grid-template-columns: 50% 50%;
+    margin-bottom: 2em;
+    box-shadow: 0 0 100px RGBA(0,0,0,0.1);
+}
+
+div.left {
+    text-align: center;
+    padding-right: 2em;
+    border-right-style: dashed;
+    border-width: 2px;
+    border-color: #aaa;
+}
+
+div.colheader {
+    font-size: 20pt;
+}
+
+div.right {
+    text-align: center;
+    padding-left: 2em;
+}
+
+div.text {
+    background-color: #fff;
+    border-style: solid;
+    border-color: #ddd;
+    border-radius: 0.1em;
+    font-family: 'Vollkorn', serif;
+    overflow: hidden;
+    margin: 0.5em;
+    padding: 1em;
+    display: block;
+    transition: all 0.15s;
+    text-align: left;
+}
+
+div.text[s="1"] {
+    transition: all 0.3s;
+    opacity: 1;
+    transform: RotateX(0deg);
+}
+
+div.text[s="0"] {
+    margin-bottom: 0 !important;
+    margin-top: 0 !important;
+    padding: 0 !important;
+    height: 0;
+    opacity: 0;
+    transform: RotateX(90deg);
+    border-style: none;
+    visibility: hidden;
+}
+
+div.text h1 {
+    font-family: 'Rubik', sans-serif;
+    margin-top: 0;
+    margin-bottom: 0.3em;
+    font-size: 90%;
+}
+
+div.text a {
+    color: #000;
+    text-decoration: none;
+}
+
+div.text button {
+    border-style: none;
+    border-width: 2px;
+    line-height: 85%;
+    font-family: inherit;
+    padding: 0;
+    margin: 0;
+    font-size: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.theader {
+    display: block;
+    margin-bottom: 1em;
+}
+
+button:hover {
+    background-color: RGBA(255,240,128,0.2) !important;
+}
+
+a:hover {
+    background-color: RGBA(255,240,128,0.2) !important;
+}
+
+button.orgn, button.surn, button.geox {
+    border-bottom-style: dotted !important;
+    border-width: 1px !important;
+
+}
+
+button.orgn {
+    border-color: rgb(255, 94, 0) !important;
+}
+
+button.surn {
+    border-color: rgb(42, 34, 158) !important;
+}
+
+button.geox {
+    border-color: rgb(53, 114, 36) !important;
+}
+
+button.simn {
+    text-decoration: underline;
+    margin-top: 1em !important;
+    font-size: 102% !important;
+}
+
+div.text a:visited {
+    color: #000;
+}
+
+#header {
+    font-family: 'Rubik', sans-serif;
+    text-align: center;
+    font-size: 80%;
+    background-color: #fff;
+}
+
+#header h5 {
+    margin: 0.3em;
+}
+
+#header a {
+    color: #000;
+}
+
+#header a:visited {
+    color: #000;
+}
+
+#header h1 {
+    font-size: 400%;
+}
+
+#header h2 {
+    margin: 0.3em;
+}
+
+#nav {
+    position: fixed;
+    left: 10%;
+    right: 10%;
+    top: 0;
+    z-index: 999;
+    background-color: transparent;
+    text-align: center;
+    margin-top: 0;
+    font-family: 'Rubik', sans-serif;
+}
+
+#hdr {
+    padding: 0.4em;
+    border-color: #333;
+    border-radius: 0.3em;
+}
+
+#hdr[s="1"] {
+    background-color: #fff !important;
+    border-style: solid;
+}
+
+#hdr[s="0"] {
+    background-color: transparent !important;
+}
+
+#nav a {
+    color: #000;
+}
+
+footer {
+    margin-top: 1em;
+    text-align: center;
+    font-family: 'Rubik', sans-serif;
+    color: #fff;
+}
+
+footer a {
+    color: rgb(255, 83, 30);
+}
+
+footer a:visited {
+    color: rgb(255, 83, 30);
+}
+
+footer h5 {
+    margin: 0.2em;
+}
+
+.github-button {
+    position: relative;
+    top: 3em;
+}
+
+#sci {
+    position: relative;
+    text-align: center;
+    top: 0.7em;
+    left: -0.05em;
+}
+
+#hcontent {
+    background-color: #fff;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 2em;
+    padding-bottom: 0.5em;
+    z-index: 999;
+}
+
+.htime {
+    position: relative;
+    top: -1em;
+    left: 1em;
+    float: right;
+    color: #ccc;
+    font-size: 80%;
+}
+
+.menu {
+    display: none;
+}
+
+@media (orientation: portrait) {
+  #hcontent {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 6.3em;
+    padding: 0;
+    border-bottom-style: solid;
+  }
+
+  body {
+    background-color: #fff;
+    margin: 0;
+  }
+
+  #content {
+    width: 100% !important;
+    margin-top: 10em;
+
+  }
+
+  #content {
+      overflow-x: scroll;
+      padding: 0 !important;
+  }
+
+  div.group {
+    padding: 0 !important;
+    margin-top: 2em;
+    width: calc(200% - 1em);
+  }
+
+  div.text {
+      font-size: 250% !important;
+  }
+
+  #header {
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    text-align: center;
+    padding: 0;
+  }
+
+  #header h2, h5 {
+      display: none;
+  }
+
+  #nav h2 {
+      margin-top: 0.6em;
+      margin-bottom: 0.4em;
+  }
+
+  #header .title {
+      display: none;
+  }
+
+  #nav {
+      margin-top: 0;
+      font-size: 21pt !important;
+      margin-bottom: 0.8em !important;
+  }
+
+  #sci {
+      display: none !important;
+  }
+
+  .colheader {
+      display: none;
+  }
+
+  #left {
+      padding-right: 0;
+  }
+
+  #right {
+      padding-left: 0;
+  }
+
+  .menu {
+      position: fixed;
+      bottom: 1em;
+      background-color: #fff !important;
+      display: inline;
+      font-size: 50pt;
+      background-color: transparent;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 0.1em;
+      width: 5em;
+      height: 3em;
+      z-index: 999;
+  }
+
+  .lgm {
+    left: 2em;
+  }
+
+  .rgm {
+    right: 2em !important;
+  }
+
+  .menu span {
+      display: inline-block;
+      padding: 0.5em;
+      font-size: 50%;
+      background-color: #000;
+      color: #fff;
+      border-radius: 999em;
+      min-width: 1em;
+      height: 1em;
+  }
+
+  .menu:hover {
+      background-color: #fff !important;
+  }
+}
+
+</style>
+</head>
+<body onload="update()" onscroll="scrspy2()">
+<div id="hcontent">
+<div id="nav">
+    <h2><span id="hdr"><a href="javascript:void()" onclick="sall()">линия разреза</a><span id="status"></span></span></h2>
+</div>
+<button class="menu lgm" id="lgm" onclick="scrl(0)">🇺🇦🇪🇺🇺🇸<span id="lst"></span></button>
+<button class="menu rgm" id="rgm" onclick="scrl(1)">🇷🇺🇧🇾🇨🇳<span id="rst"></span></button>
+</div>
+<div id="content" onscroll="scspy()">
+<div id="sci">✂️</div>
+<div class="group" id="news">
+    <div class="left" id="left">
+    <div class="colheader">🇺🇦🇪🇺🇺🇸</div>
+    </div>
+    <div class="right" id="right">
+    <div class="colheader">🇷🇺🇧🇾🇨🇳</div>
+    </div>
+</div>
+</div>
+
+<footer>
+<h5>Это новостной агрегатор. Все материалы &mdash; из открытых источников с указанием ссылок. Так что не доёбывайтесь.</h5>
+<h5>Лучше присоединяйтесь к <a href="https://github.com/dMeVdok/liniarazreza">разработке</a> и <a href="https://t.me/+jdg_UcA-j8diY2Qy">обсуждению</a></h5>
+
+<h4>&mdash; скиньте на колбасочку &mdash;</h4>
+<h5>Биткойн: 1LXfgxPL9FArgtd2z8U6zcyqGT2RGwcm5y</h5>
+<h5>Эфир: 0xb0306e3771f74356a87cd7a998e213e538944386</h5>
+</footer>
+
+<script type="text/javascript" defer>
+var ngroups = 0;
+
+const groups = {
+    "ua": ["left", "🇺🇦"],
+    "ru": ["right", "🇷🇺"],
+    "prb": ["right", "🏳"],
+    "eu": ["left", "🇪🇺"]
+}
+
+function scspy() {
+    if (document.getElementById("content").scrollLeft > window.innerWidth / 2) {
+        document.getElementById("lgm").style.borderWidth = "1px";
+        document.getElementById("rgm").style.borderWidth = "3px";
+    } else {
+        document.getElementById("lgm").style.borderWidth = "3px";
+        document.getElementById("rgm").style.borderWidth = "1px";
+    }
+}
+
+function scrspy2() {
+    if (window.scrollY > 10) {
+        document.getElementById("hdr").setAttribute("s",1);
+    } else {
+        document.getElementById("hdr").setAttribute("s",0);
+    }
+}
+
+function upst() {
+    let ls = [["left", "lst"], ["right", "rst"]];
+    for (var i=0;i<ls.length;i++) {
+        cnt = 0;
+        document.querySelectorAll("#" + ls[i][0] + " .text").forEach(el => {
+            if (el.getAttribute("s") != 0) cnt++;
+        })
+        document.getElementById(ls[i][1]).innerHTML = cnt;
+    }
+}
+
+function scrl(i) {
+    document.getElementById("content").scrollTo(10000*i, null);
+}
+
+function sstatus(t) {
+    if (t!="") {
+        t = " / " + t;
+    } else {
+        t = ""
+    }
+    document.getElementById("status").innerHTML = t;
+    upst();
+}
+
+function mkheader(media, link, time) {
+    return "<a class='theader' href='" + link + "' target='_blank'><h1>" + media + "<span class='htime'>" + time +  "</span></h1></a>"
+}
+
+function sall() {
+    let hels = document.querySelectorAll(".text");
+    hels.forEach((el) => {
+        el.setAttribute("s", "1");
+    })
+    sstatus("");
+}
+
+function sgroup(id) {
+    for(var i=0;i<ngroups;i++) {
+        let els = document.querySelectorAll(".g" + i);
+        els.forEach((el) => {
+            if(i!=id) {
+                el.setAttribute("s", "0");
+            }
+        })
+    }
+    sstatus("похожие");
+}
+
+function srch(t) {
+    let hels = document.querySelectorAll(".text");
+    hels.forEach((el) => {
+        el.setAttribute("s", "0");
+    })
+    let els = document.querySelectorAll("." + t);
+    els.forEach((el) => {
+        el.parentElement.setAttribute("s", "1");
+    })
+    sstatus(t);
+}
+
+function update() {
+    fetch('/similarity')
+        .then(response => response.json())
+        .then(data => {
+            let container = document.getElementById("content");
+            ngroups = Object.keys(data).length;
+            for(var i in data) {
+                if (data[i].length > 0) {
+                    var new_group = document.getElementById("news");
+                    // container.appendChild(new_group);
+                    var left_group = document.getElementById("left");
+                    //left_group.className = "left";
+                    var right_group = document.getElementById("right");
+                    //right_group.className = "right";
+                    //new_group.appendChild(left_group);
+                    //new_group.appendChild(right_group);
+                    for(var j in data[i]) {
+                        var new_text = document.createElement('div');
+                        new_text.className = "text g" + i;
+                        new_text.setAttribute("s", "1");
+                        if (data[i][j][0] in groups) {
+                            text = data[i][j][2].split("\n").join("<br/>");
+                            new_text.innerHTML = mkheader(groups[data[i][j][0]][1] + " " + data[i][j][1], data[i][j][3], data[i][j][4]) + text;
+                            
+                            if (data[i].length > 1) {
+                                new_text.innerHTML += "<br><div><button class='simn' onclick='sgroup(" + i + ")'>похожие новости (" + data[i].length + ")</button></div>"
+                            }
+                            to_which = groups[data[i][j][0]][0];
+                            if (to_which == "left") left_group.appendChild(new_text);
+                            if (to_which == "right") right_group.appendChild(new_text);
+                        }
+                    }
+                }
+
+            }
+            upst();
+        });
+}
+
+</script>
+<!-- Place this tag in your head or just before your close body tag. -->
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

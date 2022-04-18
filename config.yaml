@@ -1,0 +1,39 @@
+ua:
+  unian:
+    name: "UNIAN"
+    telegram:
+      - uniannet
+  hromadske:
+    name: "HROMADSKE"
+    telegram:
+      - hromadske_ua
+prb:
+  meduza:
+    name: "MEDUZA"
+    rss:
+      - https://meduza.io/rss/all
+    telegram:
+      - meduzalive
+    remove:
+      - ДАННОЕ СООБЩЕНИЕ (МАТЕРИАЛ) СОЗДАНО И (ИЛИ) РАСПРОСТРАНЕНО ИНОСТРАННЫМ СРЕДСТВОМ МАССОВОЙ ИНФОРМАЦИИ, ВЫПОЛНЯЮЩИМ ФУНКЦИИ ИНОСТРАННОГО АГЕНТА, И (ИЛИ) РОССИЙСКИМ ЮРИДИЧЕСКИМ ЛИЦОМ, ВЫПОЛНЯЮЩИМ ФУНКЦИИ ИНОСТРАННОГО АГЕНТА.
+      - ДАННОЕ СООБЩЕНИЕ (МАТЕРИАЛ) СОЗДАНО И (ИЛИ) РАСПРОСТРАНЕНО ИНОСТРАННЫМ СРЕДСТВОМ МАССОВОЙ ИНФОРМАЦИИ, ВЫПОЛНЯЮЩИМ ФУНКЦИИ ИНОСТРАННОГО АГЕНТА, И (ИЛИ) РОССИЙСКИМ ЮРИДИЧЕСКИМ ЛИЦОМ, ВЫПОЛНЯЮЩИМ ФУНКЦИИ ИНОСТРАННОГО АГЕНТА
+      - Спасите «Медузу»! https://support.meduza.io
+ru:
+  rbc:
+    name: "РБК"
+    telegram:
+      - rbc_news
+  ostorozhno_novosti:
+    name: "Осторожно, новости"
+    telegram:
+      - ostorozhno_novosti
+  rvnp:
+    name: "Раньше всех. Ну, почти"
+    telegram:
+      - bbbreaking
+  shot:
+    name: "SHOT"
+    telegram:
+      - shot_shot
+  
+  

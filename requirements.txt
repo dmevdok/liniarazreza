@@ -1,0 +1,12 @@
+fastapi==0.75.1
+feedparser==6.0.2
+requests==2.27.1
+apscheduler==3.9.1
+stop-words>=2018.7.23
+uvicorn[standard]
+pymorphy2
+pymorphy2-dicts-ru
+pymorphy2-dicts-uk
+langdetect==1.0.9
+fuzzywuzzy[speedup]==0.18.0
+scipy==1.8.0

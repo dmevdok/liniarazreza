@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    command: ["python", "main.py"]
+    working_dir: /worker
+    volumes:
+      - ./:/worker
+    ports:
+      - 8000:8000
